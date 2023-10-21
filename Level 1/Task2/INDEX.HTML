@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins' ,sans-serif;
+
+}
+body{
+    /* display:flex; */
+    /* justify-content:center; */
+    align-items :center;
+    min-height: 100px;
+    text-align: center;
+}
+
+.btn{
+    padding:20px 80px;
+    background: #7d2ae8;
+    border: 2px solid #fff;
+    outline:none;
+    border-radius: 8px ;
+    box-shadow: 0 0 40px #7d2ae8;
+    font-size: 32px;
+    color: #fff;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+    </style>
+  </head>
+
+  <body style="background-color: blueviolet;">
+    <div class="btn">
+        <button id="myButton">Click me!</button>
+         <script>
+         const button = document.querySelector("#myButton");
+         button.addEventListener("click", function() {
+         button.style.backgroundColor = "red";
+         });
+         </script>
+    </div>
+    <div >
+        <input type="number" id="firstNumber" placeholder="Enter first number">
+        <input type="number" id="secondNumber" placeholder="Enter second number">
+        <button id="calculateButton">Calculate</button>
+        <p id="result"></p>
+      
+        <script>
+          const firstNumberInput = document.getElementById('firstNumber');
+          const secondNumberInput = document.getElementById('secondNumber');
+          const calculateButton = document.getElementById('calculateButton');
+          const resultParagraph = document.getElementById('result');
+      
+          calculateButton.addEventListener('click', function() {
+            const firstNumber = parseFloat(firstNumberInput.value);
+            const secondNumber = parseFloat(secondNumberInput.value);
+      
+            const sum = firstNumber + secondNumber;
+      
+            resultParagraph.textContent = `The sum is: ${sum}`;
+          });
+        </script>
+    </div>
+    <div>
+        <script>
+            const hour = new Date().getHours();
+            let greeting;
+            if (hour < 12) {
+              greeting = "Good morning!";
+            } else if (hour < 18) {
+              greeting = "Good afternoon!";
+            } else {
+              greeting = "Good evening!";
+            }
+            alert(greeting);
+          </script>
+    </div>
+  </body>
+</html>
